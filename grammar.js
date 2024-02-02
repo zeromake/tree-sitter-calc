@@ -21,6 +21,6 @@ module.exports = grammar({
             field('right', $.expression)
         ))))),
         // 支持下划线的数字
-        number: $ => seq(/\d(_?\d)*/)
+        number: $ => seq(optional(choice('-', '+')), /\d(_?\d)*/)
     }
 });
